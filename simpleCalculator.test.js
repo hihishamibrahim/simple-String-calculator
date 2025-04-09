@@ -19,4 +19,9 @@ describe('SimpleCalculator', () => {
         expect(()=>SimpleCalculator('-5,-15,5')).toThrow('Negative numbers are not allowed -5,-15');
         expect(()=>SimpleCalculator('-5,-10,5,10')).toThrow('Negative numbers are not allowed -5,-10');
     });
+    it('test for next line', () => {
+        expect(SimpleCalculator('5,6\n5')).toBe(16);
+        expect(SimpleCalculator('1,2\n3')).toBe(6);
+        expect(SimpleCalculator('1\n2,3')).toBe(6);
+    });
 });
